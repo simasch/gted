@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+	 <editor
+            class="net.sf.gted.editor.POFormEditor"
+            contributorClass="net.sf.gted.editor.POFileEditorContributor"
+            extensions="po,pot"
+            icon="icons/pofile.gif"
+            id="net.sf.gted.editor.POFormEditor"
+            name="PO File Editor">
+         <contentTypeBinding contentTypeId="net.sf.gted.editor.contenttype.po"/>
+      </editor>      
+   </extension>
+   <extension
+         id="net.sf.gted.editor.parseerror"
+         name="PO File Error Marker"
+         point="org.eclipse.core.resources.markers">
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.core.resources.textmarker"/>
+      <persistent value="false"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="net.sf.gted.editor.preferences.CategoryPreferencePage"
+            class="net.sf.gted.editor.preferences.EditorPreferencePage"
+            id="net.sf.gted.editor.preferences.EditorPreferencePage"
+            name="PO File Editor"/>
+      <page
+            class="net.sf.gted.editor.preferences.CategoryPreferencePage"
+            id="net.sf.gted.editor.preferences.CategoryPreferencePage"
+            name="gted">
+      </page>
+   </extension>
+   <extension
+         id="preferences"
+         name="gted preferences"
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="net.sf.gted.editor.preferences.PreferenceInitializer"/>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            default-charset="UTF-8"
+            file-extensions="po,pot"
+            id="net.sf.gted.editor.contenttype.po"
+            name="gettext PO"
+            priority="normal"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors.markerUpdaters">
+      <updater
+            class="net.sf.gted.editor.source.markers.POMarkerUpdater"
+            id="net.sf.gted.editor.markers.POMarkerUpdater"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.workbench.texteditor.hyperlinkDetectors">
+      <hyperlinkDetector
+            activate="true"
+            class="net.sf.gted.editor.source.hyperlink.POHyperlinkDetector"
+            id="net.sf.gted.editor.source.hyperlink.POHyperlinkDetector"
+            name="Source Reference"
+            targetId="net.sf.gted.editor.source.hyperlink.POHyperlinkDetectorTarget">
+      </hyperlinkDetector>
+   </extension>
+   <extension
+         point="org.eclipse.ui.workbench.texteditor.hyperlinkDetectorTargets">
+      <target
+            id="net.sf.gted.editor.source.hyperlink.POHyperlinkDetectorTarget"
+            name="PO Editor">
+         <context
+               type="net.sf.gted.editor.source.POSourceEditor">
+         </context>
+      </target>
+   </extension>
+
+</plugin>

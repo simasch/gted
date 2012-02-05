@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://gted.sourceforge.net/update/">
+      gted (GetText EDitor) Update Site
+   </description>
+   <feature url="http://downloads.sourceforge.net/gted/net.sf.gted.feature_1.5.5.jar" id="net.sf.gted.feature" version="1.5.5">
+      <category name="gted"/>
+   </feature>
+   <archive path="plugins/net.sf.gted.editor_1.5.5.jar" url="http://downloads.sourceforge.net/gted/net.sf.gted.editor_1.5.5.jar"/>
+   <archive path="plugins/net.sf.gted.tools_1.5.5.jar" url="http://downloads.sourceforge.net/gted/net.sf.gted.tools_1.5.5.jar"/>
+   <archive path="plugins/net.sf.gted.doc_1.5.5.jar" url="http://downloads.sourceforge.net/gted/net.sf.gted.doc_1.5.5.jar"/>
+   <category-def name="gted" label="gted"/>
+</site>

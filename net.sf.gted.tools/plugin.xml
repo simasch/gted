@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="net.sf.gted.tools.gted.projectcontrib"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="net.sf.gted.tools.popup.actions.MakeMOFilesAction"
+               enablesFor="1"
+               id="net.sf.gted.tools.makemofilesaction"
+               label="&amp;Make MO Files"
+               menubarPath="net.sf.gted.tools.gtedmenu/gtedgroup"/>
+         <action
+               label="&amp;Update PO Files"
+               class="net.sf.gted.tools.popup.actions.UpdatePOFilesAction"
+               menubarPath="net.sf.gted.tools.gtedmenu/gtedgroup"
+               enablesFor="1"
+               id="net.sf.gted.tools.updatepofilesaction">
+         </action>
+         <menu
+               label="&amp;gted"
+               path="additions"
+               id="net.sf.gted.tools.gtedmenu">
+            <separator
+                  name="gtedgroup">
+            </separator>
+         </menu>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            adaptable="true"
+            class="net.sf.gted.tools.properties.ProjectPropertyPage"
+            id="net.sf.gted.tools.properties.ProjectPropertyPage"
+            name="gted Settings"
+            objectClass="org.eclipse.core.resources.IProject"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="net.sf.gted.editor.preferences.CategoryPreferencePage"
+            class="net.sf.gted.tools.preferences.ToolsPreferencePage"
+            id="net.sf.gted.tools.preferences.ToolsPreferencePage"
+            name="gettext Tools">
+      </page>
+   </extension>
+
+</plugin>

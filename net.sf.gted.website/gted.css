@@ -1,0 +1,25 @@
+body {
+	font-family:Verdana,Tahoma,Arial,Helvetica,Sans-serif,sans-serif;
+}
+p, td, tr, li {
+	font-size:10pt;
+}
+h1 {
+	font-size:12pt;
+	color:#808080;
+	font-weight:bold;
+}
+
+h2 {
+	font-size:10pt;
+	font-weight:bold;
+}
+a.navi {
+	color:#EFEFEF;
+	font-weight:bold;
+	text-decoration:none;
+}
+a {
+	color:#808080;
+}
+

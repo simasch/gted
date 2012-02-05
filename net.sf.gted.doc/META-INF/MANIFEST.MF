@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: gted Doc Plug-in
+Bundle-SymbolicName: net.sf.gted.doc;singleton:=true
+Bundle-Version: 1.5.5
+Bundle-Vendor: Simon Martinelli

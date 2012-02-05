@@ -1,0 +1,106 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="de-ch">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="gted.css" />
+<title>gted :: GetText EDitor :: Tutorial: Using gettext in Java 5 (or later)
+</title>
+</head>
+
+<body>
+
+<div align="center">
+  <table border="0" width="600" id="table2" cellspacing="0" cellpadding="0">
+  </table>
+  <table width="600">
+    <tr>
+      <td align="left"><a href="http://gted.sourceforge.net">
+      <img border="0" src="gted.gif" width="222" height="81"></a></td>
+      <td align="right"><a href="http://sourceforge.net/projects/gted"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=185425&type=12" width="120" height="30" border="0" alt="Get gted at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a></td>
+    </tr>
+    </td>
+    </tr>
+  </table>
+  <table border="0" width="600" id="table3" cellspacing="0" cellpadding="20" bgcolor="#EFEFEF">
+    <tr>
+      <td>
+      <h1>Tutorial: Using gettext in Java 5 (or later)</h1>
+      <p>Since I'm a very big fan of gettext I also use gettext to create the 
+      resource bundles of my Java programs. Here is a short tutorial. <br>
+      It's based on the
+      <a href="http://www.gnu.org/software/gettext/manual/gettext.html">gettext 
+      documentation</a>.</p>
+      <p><i>Important notice: This tutorial doesn't make use of gted! It 
+      demostrates simply the functionality of GNU gettext with Java.</i></p>
+      <hr noshade color="#808080" size="1">
+      <h2>1. Create a class called Util</h2>
+      <font COLOR="#7f0055"><b>
+      <div align="left">
+        <pre>public</b></font><font> </font><font COLOR="#7f0055"><b>class</b></font><font> Util {</font></pre>
+      </div>
+      <div align="left">
+        <pre>  <font COLOR="#7f0055"><b>private</b></font><font> </font><font COLOR="#7f0055"><b>static</b></font><font> ResourceBundle </font><font COLOR="#0000c0"><i>catalog</i></font><font> = 
+        ResourceBundle.<i>getBundle</i>(</font><font COLOR="#2a00ff">&quot;Messages&quot;</font><font>);</pre>
+      </div>
+      <div align="left">
+        <pre>  </font><font COLOR="#7f0055"><b>public</b></font><font> </font><font COLOR="#7f0055"><b>static</b></font><font> String _(String s) {
+    </font><font COLOR="#7f0055"><b>return</b></font><font> </font><font COLOR="#0000c0"><i>catalog</i></font><font>.getString(s);
+  }
+}</pre>
+      </div>
+      </font><hr noshade color="#808080" size="1">
+      <h2>2. Use Util as static import in your classes to mark the strings 
+      Translatable</h2>
+      <font COLOR="#7f0055"><b>
+      <div align="left">
+        <pre>import</b></font><font> </font><font COLOR="#7f0055"><b>static</b></font><font> Util.<i>_</i>;</pre>
+      </div>
+      </font><font COLOR="#7f0055"><b>
+      <div align="left">
+        <pre>public</b></font><font> </font><font COLOR="#7f0055"><b>class</b></font><font> Translatable {</pre>
+      </div>
+      <div align="left">
+        <pre>  </font><font COLOR="#7f0055"><b>public</b></font><font> </font><font COLOR="#7f0055"><b>static</b></font><font> </font><font COLOR="#7f0055"><b>void</b></font><font> main(String[] args) {
+    System.</font><font COLOR="#0000c0"><i>out</i></font><font>.println(<i>_</i>(</font><font COLOR="#2a00ff">&quot;Text one&quot;</font><font>));
+    System.</font><font COLOR="#0000c0"><i>out</i></font><font>.println(<i>_</i>(</font><font COLOR="#2a00ff">&quot;Text two&quot;</font><font>));
+  }
+}</pre>
+      </div>
+      </font><hr noshade color="#808080" size="1">
+      <h2>3. Generate .pot file from your Java sources</h2>
+      <pre>&gt; xgettext -k_ -o po/messages.pot src/Translatable.java</pre>
+      <p>-k_ indicates that the it must scan for calls to _()</p>
+      <hr noshade color="#808080" size="1">
+      <h2>4. Copy the .pot file to a .po file for the desired languages</h2>
+      <p>Place the file under po/&lt;languagecode&gt;/messages.po</p>
+      <hr noshade color="#808080" size="1">
+      <h2>5. Generate ResourceBundles</h2>
+      <pre>&gt; msgfmt --java2 -d resources -r Messages -l de po/de/messages.po</pre>
+      <p>Hint: under Windows you have to set the TMPDIR: i.e. set TMPDIR=c:\temp</p>
+      <hr noshade color="#808080" size="1">
+      <h2>6. Run the program</h2>
+      <p><i>Make sure that the folder <b>resources</b> is in the classpath!</i></p>
+      <p>The programs output should now be translated.</p>
+      <hr noshade color="#808080" size="1">
+      <h2>Appendix. Update .po files</h2>
+      <p>To update your .po files run again:</p>
+      <pre>&gt; xgettext -k_ -o po/messages.pot src/Translatable.java</pre>
+      <p>Then merge the new .pot file to the existing .po files</p>
+      <pre>&gt; msgmerge -U po/de/messages.po po/messages.pot</pre>
+      </td>
+    </tr>
+  </table>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5256650-1");
+pageTracker._trackPageview();
+</script>
+</body>
+
+</html>

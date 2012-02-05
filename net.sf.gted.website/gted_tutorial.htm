@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="de-ch">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="gted.css" />
+<title>gted :: GetText EDitor :: gted Tutorial</title>
+</head>
+
+<body>
+
+<div align="center">
+  <table border="0" width="600" id="table2" cellspacing="0" cellpadding="0">
+  </table>
+  <table width="600">
+    <tr>
+      <td align="left"><a href="http://gted.sourceforge.net">
+      <img border="0" src="gted.gif" width="222" height="81"></a></td>
+      <td align="right"><a href="http://sourceforge.net/projects/gted"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=185425&type=12" width="120" height="30" border="0" alt="Get gted at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a></td>
+    </tr>
+    </td>
+    </tr>
+  </table>
+  <table border="0" width="600" id="table3" cellspacing="0" cellpadding="20" bgcolor="#EFEFEF">
+    <tr>
+      <td>
+      <h1>gted Tutorial</h1>
+      <p><i>Written by Pavel Mendl, 15. July 2008. Thanks a lot!</i></p>
+      <ol>
+        <li>
+        xgettext Keywords is name of the macro for translatable string, thus
+typically &quot;_&quot; (underscore) and NOT e.g. &quot;gettext&quot; <br>
+&nbsp;</li>
+        <li>
+        gted depends on concrete subdirectories structure:
+        <ul>
+          <li>
+          [FOLDER]/po <br>
+This is the folder configured as xgettext Output folder property <br>
+&nbsp;</li>
+          <li>
+          [FILE]/po/messages.pot <br>
+gets generated/updated automatically on right-click on project 
+(! not any project file) 
+gted-&gt;Update PO files <br>
+&nbsp;</li>
+          <li>
+          [FOLDER]/po/&lt;ISO 639-1 country code&gt;
+<br>
+          e.g. /po/cs or /po/fr; create any number of them you need and
+copy messages.pot in renamed to messages.po <br>
+&nbsp;</li>
+          <li>
+          [FILE]/po/&lt;ISO 639-1 country code&gt;/messages.po <br>
+Here you can do translation into actual language;
+gets updated (actualized) each time you use gted-&gt;Update PO files <br>
+Yes, all of them - see resolved bug report on this <br>
+&nbsp;</li>
+        </ul>
+        </li>
+        <li>
+        Given the above, you can configure other folder (e.g. /mo) into msgfmt
+Output folder property. 
+<br>
+        You NEED NOT fill in Path to Java compiler if using for C++ (e.g. CDT) projects. 
+        <br>
+        Create the same language(s) subdirectory(ies) as below /po (did not test, 
+if folders must exist or will be created; did not test, if you could use simply 
+&quot;/po&quot; to mix .po and .mo files in same tree). <br>
+&nbsp;</li>
+        <li>
+        Now right-clicking on project gted-&gt;Make MO files generates one messages.mo 
+file for each messages.po from step 2.
+        </li>
+      </ol>
+      </td>
+    </tr>
+  </table>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5256650-1");
+pageTracker._trackPageview();
+</script>
+</body>
+
+</html>

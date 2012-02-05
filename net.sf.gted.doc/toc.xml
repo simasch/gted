@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="gted - GetText EDitor and Tools Integration">
+	<topic label="po Editor" href="html/editor.html" />
+	<topic label="gettext Tools Integration" href="html/tools.html" />
+	<topic label="License" href="html/license.html" />
+</toc>

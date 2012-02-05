@@ -1,0 +1,442 @@
+Release Notes 
+--------------------------------------------------------------------------
+gted - gted.sourceforge.net : PO File Editor and gettext Tools Integration
+==========================================================================
+Copyright (C) 2009 by Simon Martinelli, Gampelen, Switzerland
+Read the gpl.txt file for the complete license
+==========================================================================
+Release:    1.5.5
+Date:       22.09.2009
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- It's now possible to add a Source Reference Prefix
+  Thanks a lot to KlaMe for his patch!
+--------------------------------------------------------------------------
+Bugfixes:
+-  
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.5.4
+Date:       28.04.2009
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Outline View displays displays msgid even if the first line is ""
+- Added --domain-name in all gted tools 
+--------------------------------------------------------------------------
+Bugfixes:
+-  
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.5.2 -> 1.5.3
+Date:       24.02.2009
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- 
+--------------------------------------------------------------------------
+Bugfixes:
+- Fixed deletion of spaces at the end of the line 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.5.1
+Date:       23.02.2009
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- 
+--------------------------------------------------------------------------
+Bugfixes:
+- #2629909: msgids starting with an empty string handled correctly 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.5.0
+Date:       13.01.2009
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- #1993779: .pot file name as option 
+- #2500775: Added -r option for Java output
+            Thanks a lot to Martin for this Patch!
+--------------------------------------------------------------------------
+Bugfixes:
+- 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.4.1
+Date:       18.08.2008
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Help pages updated 
+--------------------------------------------------------------------------
+Bugfixes:
+- Compiled with Java 5
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.4.0
+Date:       12.08.2008
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- New property "from-code" added fixes #1964473 and #1979775   
+- #1848628: Set the path to the gettext utilities
+- Several code fix based on PMD reports
+- Using ProcessBuilder to create process as recommanded by Java
+- Removed javac path. It's not necessairy and ignored by msgmft 
+--------------------------------------------------------------------------
+Bugfixes:
+- Fixed IndexArrayOutOfBoundsException when no language is selected on
+  property page
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.3.0
+Date:       07.04.2008                      
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- #1848616: Ctrl + Click on references in source editor
+- #1848621: more than one keyword for xgettext
+--------------------------------------------------------------------------
+Bugfixes:
+- 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.2.0
+Date:       03.04.2008                     
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+-  
+--------------------------------------------------------------------------
+Bugfixes:
+- #1931731: Plural-Form correctly saved
+- #1844311: All .po files are merged
+- #1927276: Whitespaces are now untouched
+--------------------------------------------------------------------------
+Known problems and limitations:
+- See the open bugs in SourceForge bug tracker
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.1.0
+Date:       01.04.2008              
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+-  
+--------------------------------------------------------------------------
+Bugfixes:
+- #1889727: Thanks a lot to zregvart for his patch!
+- #1886392: " in msgstr are now escaped
+--------------------------------------------------------------------------
+Known problems and limitations:
+- See the open bugs in SourceForge bug tracker
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    1.0.0
+Date:       22.10.2007       
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Outline view for po files in source editor 
+--------------------------------------------------------------------------
+Bugfixes:
+- Filter in entries table fixed
+- #1816149: Header fields on two lines allowed!
+--------------------------------------------------------------------------
+Known problems and limitations:
+-
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    0.7.1
+Date:       02.10.2007
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Entries editor orientation can be set in preferences!
+  New default value "horizontal"
+- Feature request #1689157: UI resizes the input boxes dynamically 
+  depending on the size of the editor window
+--------------------------------------------------------------------------
+Bugfixes:
+- 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- UI has problems with Mac OS X (this is an Eclipse problem)
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    0.7.0
+Date:       25.09.2007
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- 
+--------------------------------------------------------------------------
+Bugfixes:
+- #1799345: support for multiple references e.g. #: ;1044 
+- #1797112: header fields are now saved 
+- #1793832: NPE when saving in source view fixed
+- #1772052: gted on Linux ok
+--------------------------------------------------------------------------
+Known problems and limitations:
+- UI has problems with Mac OS X (this is an Eclipse problem)
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    0.6.3
+Date:       23.07.2007
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- 
+--------------------------------------------------------------------------
+Bugfixes:
+- line feeds and \n in msgstr are untouched when saving .po file
+--------------------------------------------------------------------------
+Known problems and limitations:
+- UI has problems with Mac OS X (this is an Eclipse problem)
+- support for multiple references e.g. #: ;1044 missing
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    0.6.2
+Date:       16.07.2007
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- 
+--------------------------------------------------------------------------
+Bugfixes:
+- #1753739 line feed problems fixed
+--------------------------------------------------------------------------
+Known problems and limitations:
+- UI has problems with Mac OS X (this is an Eclipse problem)
+- support for multiple references e.g. #: ;1044 missing
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    0.6.1
+Date:       27.06.2007
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Editor improved
+--------------------------------------------------------------------------
+Bugfixes:
+- #1717656 fixed refresh problem in listener
+- #1708791 fixed
+- quotes were missing if msgid has more than one row
+--------------------------------------------------------------------------
+Known problems and limitations:
+- UI has problems with Mac OS X
+- support for multiple references e.g. #: ;1044 missing
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    0.6.0
+Date:       17.06.2007
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Completly new parser for po files
+--------------------------------------------------------------------------
+Bugfixes:
+- #1708800 fixed with the new parser
+- #1708712 fixed with the new parser
+- #1706956 fixed with the new parser
+--------------------------------------------------------------------------
+Known problems and limitations:
+- UI has problems with Mac OS X
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    0.5.1
+Date:       29.03.2007
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- 
+--------------------------------------------------------------------------
+Bugfixes:
+- #1690356 gted now supports msg without comments
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    0.5.0
+Date:       27.03.2006
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Eclipse forms used for PO file editor
+- Refactoring of model
+- Refactoring of header editor
+- Display filename in editor title
+- Make MO Files also creates new folders if necessary
+--------------------------------------------------------------------------
+Bugfixes:
+-
+--------------------------------------------------------------------------
+Known problems and limitations:
+- 
+--------------------------------------------------------------------------
+Remarks:
+- 
+==========================================================================
+Release:    0.4.1
+Date:       05.02.2006
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Fuzzy and untranslated entries are only reported once
+- Bugfixes in EntryPanel
+- Doubleclick on a reference opens the referenced file
+- Added xgettext and msgmerge support
+- Added msgfmt support
+--------------------------------------------------------------------------
+Bugfixes:
+- 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- Only one file extension supported
+- Output folders in folder selection dialog are not preselected
+- EntryPanel is not yet perfect
+--------------------------------------------------------------------------
+Remarks:
+- First beta version of gettext tools integration
+==========================================================================
+Release:    0.3.0
+Date:       22.01.2006
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- error handling in parser improved
+- added content type for *.po files and set default encoding to UTF-8 
+- parsing errors are reported in problem view
+- added filter for fuzzy and non translated entries
+- preferences for showing warnings if file contains fuzzy or untranslated
+  entries
+--------------------------------------------------------------------------
+Bugfixes:
+- 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- EntryPanel is not yet perfect
+--------------------------------------------------------------------------
+Remarks:
+-
+==========================================================================
+Release:    0.2.3
+Date:       11.01.2006
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- new icon for po files
+- added Update Site
+--------------------------------------------------------------------------
+Bugfixes:
+- some small bugfixes
+--------------------------------------------------------------------------
+Known problems and limitations:
+- EntryPanel is not yet perfect
+--------------------------------------------------------------------------
+Remarks:
+-
+==========================================================================
+Release:    0.2.2
+Date:       09.01.2006
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Added fuzzy handling, also in indicated in table as icon
+--------------------------------------------------------------------------
+Bugfixes:
+- 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- EntryPanel is not yet perfect
+--------------------------------------------------------------------------
+Remarks:
+-
+==========================================================================
+Release:    0.2.1
+Date:       09.01.2006
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- Added syntax coloring
+--------------------------------------------------------------------------
+Bugfixes:
+- 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- EntryPanel is not perfect
+--------------------------------------------------------------------------
+Remarks:
+-
+==========================================================================
+Release:    0.2.0
+Date:       09.01.2006
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- TableViewer instead of CompositeTable used
+- Added support for plural form
+--------------------------------------------------------------------------
+Bugfixes:
+- 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- EntryPanel is not perfect
+--------------------------------------------------------------------------
+Remarks:
+-
+==========================================================================
+Release:    0.1.0
+Date:       06.01.2006
+--------------------------------------------------------------------------
+New functionality, changes, new features:
+- First Alpha release
+--------------------------------------------------------------------------
+Bugfixes:
+- 
+--------------------------------------------------------------------------
+Known problems and limitations:
+- msgid_plural currently not supported!
+- CompositeTable from Eclipse Nebula Project has bugs!
+--------------------------------------------------------------------------
+Remarks:
+-
+==========================================================================

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.sf.gted.feature"
+      label="gted PO File Editor Feature"
+      version="1.5.5"
+      provider-name="Simon Martinelli">
+
+   <description url="http://gted.sourceforge.net">
+      gted (GetText EDitor) is an editor for gettext po files. 
+gted is developed as Eclipse plugin and therefore very usfull for developers (and translators) using the Eclipse IDE for developing.
+   </description>
+
+   <copyright url="http://gted.sourceforge.net/">
+      Copyright (C) 2007 by Simon Martinelli, Gampelen, Switzerland
+   </copyright>
+
+   <license url="http://gted.sourceforge.net/">
+      This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of
+the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details. 
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301
+USA.
+   </license>
+
+   <url>
+      <update label="gted Update" url="http://gted.sourceforge.net/update/"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+   </requires>
+
+   <plugin
+         id="net.sf.gted.doc"
+         download-size="0"
+         install-size="0"
+         version="1.5.5"/>
+
+   <plugin
+         id="net.sf.gted.editor"
+         download-size="0"
+         install-size="0"
+         version="1.5.5"/>
+
+   <plugin
+         id="net.sf.gted.tools"
+         download-size="0"
+         install-size="0"
+         version="1.5.5"/>
+
+</feature>
