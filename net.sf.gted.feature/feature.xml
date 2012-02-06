@@ -2,7 +2,7 @@
 <feature
       id="net.sf.gted.feature"
       label="gted PO File Editor Feature"
-      version="1.5.5"
+      version="1.6.0"
       provider-name="Simon Martinelli">
 
    <description url="http://gted.sourceforge.net">
@@ -47,18 +47,18 @@ USA.
          id="net.sf.gted.doc"
          download-size="0"
          install-size="0"
-         version="1.5.5"/>
+         version="1.6.0"/>
 
    <plugin
          id="net.sf.gted.editor"
          download-size="0"
          install-size="0"
-         version="1.5.5"/>
+         version="1.6.0"/>
 
    <plugin
          id="net.sf.gted.tools"
          download-size="0"
          install-size="0"
-         version="1.5.5"/>
+         version="1.6.0"/>
 
 </feature>

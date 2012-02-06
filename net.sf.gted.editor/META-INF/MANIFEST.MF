@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: gted PO File Editor
 Bundle-SymbolicName: net.sf.gted.editor;singleton:=true
-Bundle-Version: 1.5.5
+Bundle-Version: 1.6.0
 Bundle-Activator: net.sf.gted.editor.POFileEditorPlugin
 Bundle-Vendor: Simon Martinelli
 Require-Bundle: org.eclipse.core.runtime,
@@ -19,3 +19,38 @@ Bundle-ClassPath: net.sf.gted.editor.jar,
  lib/commons-lang-2.1.jar,
  lib/junit-3.8.1.jar
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: junit.awtui,
+ junit.extensions,
+ junit.framework,
+ junit.runner,
+ junit.swingui,
+ junit.swingui.icons,
+ junit.textui,
+ net.sf.gted.editor,
+ net.sf.gted.editor.action,
+ net.sf.gted.editor.dialog,
+ net.sf.gted.editor.entry,
+ net.sf.gted.editor.entry.detail,
+ net.sf.gted.editor.entry.detail.preferences,
+ net.sf.gted.editor.entry.master,
+ net.sf.gted.editor.filter,
+ net.sf.gted.editor.header,
+ net.sf.gted.editor.preferences,
+ net.sf.gted.editor.source,
+ net.sf.gted.editor.source.hyperlink,
+ net.sf.gted.editor.source.markers,
+ net.sf.gted.editor.source.outline,
+ net.sf.gted.editor.source.rules,
+ net.sf.gted.editor.source.scanner,
+ net.sf.gted.editor.util,
+ net.sf.gted.model,
+ net.sf.gted.parsers,
+ net.sf.gted.po.parser.test,
+ net.sf.gted.po.parser.test.po,
+ org.apache.commons.lang,
+ org.apache.commons.lang.builder,
+ org.apache.commons.lang.enums,
+ org.apache.commons.lang.exception,
+ org.apache.commons.lang.math,
+ org.apache.commons.lang.mutable,
+ org.apache.commons.lang.time

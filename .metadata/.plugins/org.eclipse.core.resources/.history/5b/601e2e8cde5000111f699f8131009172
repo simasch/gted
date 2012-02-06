@@ -1,0 +1,32 @@
+<project name="Update Version" default="default" basedir="../">
+
+	<target name="default" depends="update" />
+
+	<property name="oldversion" value="1.5.4" />
+	<property name="newversion" value="1.5.5" />
+
+	<target name="update">
+
+		<replace dir="${basedir}/net.sf.gted.doc/META-INF/" token="${oldversion}" value="${newversion}">
+			<include name="MANIFEST.MF" />
+		</replace>
+
+		<replace dir="${basedir}/net.sf.gted.editor/META-INF/" token="${oldversion}" value="${newversion}">
+			<include name="MANIFEST.MF" />
+		</replace>
+
+		<replace dir="${basedir}/net.sf.gted.feature/" token="${oldversion}" value="${newversion}">
+			<include name="feature.xml" />
+		</replace>
+
+		<replace dir="${basedir}/net.sf.gted.tools/META-INF/" token="${oldversion}" value="${newversion}">
+			<include name="MANIFEST.MF" />
+		</replace>
+
+		<replace dir="${basedir}/net.sf.gted.update/" token="${oldversion}" value="${newversion}">
+			<include name="site.xml" />
+		</replace>
+
+	</target>
+
+</project>

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: gted gettext Tools Integration
 Bundle-SymbolicName: net.sf.gted.tools; singleton:=true
-Bundle-Version: 1.5.5
+Bundle-Version: 1.6.0
 Bundle-Activator: net.sf.gted.tools.ToolsPlugin
 Bundle-Vendor: Simon Martinelli
 Require-Bundle: org.eclipse.ui,
@@ -12,3 +12,8 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: net.sf.gted.tools.jar
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: net.sf.gted.tools,
+ net.sf.gted.tools.popup.actions,
+ net.sf.gted.tools.preferences,
+ net.sf.gted.tools.properties,
+ net.sf.gted.tools.util
