@@ -8,5 +8,8 @@ public class Translatable {
 		System.out.println(_("one"));
 		System.out.println(_("two"));
 		System.out.println(_("three"));
+		System.out.println(_("quatro"));
+		System.out.println(_("cinco"));
+		System.out.println(_("seis"));
 	}
 }

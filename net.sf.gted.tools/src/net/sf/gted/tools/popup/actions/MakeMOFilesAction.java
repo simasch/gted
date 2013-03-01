@@ -140,11 +140,15 @@ public class MakeMOFilesAction implements IObjectActionDelegate {
 		for (final IResource resource : ifolder.members()) {
 			if (resource instanceof IFolder) {
 				final IFolder trFolder = (IFolder) resource;
-				final IFile file = trFolder.getFile(domainname + ".po");
-				if (file.exists()) {
+				
+
+				final IFolder lcFolder = trFolder.getFolder("LC_MESSAGES");
+				final IFile file = lcFolder.exists() ? lcFolder.getFile(domainname + ".po") : null;
+				
+				if (lcFolder.exists() && file.exists()) {
 					// Create a new folder
 					final IPath path = ofolder.getFullPath().append(
-							resource.getName());
+							resource.getName());					
 					final IFolder newfolder = ResourcesPlugin.getWorkspace()
 							.getRoot().getFolder(path);
 					if (!newfolder.exists()) {
@@ -204,10 +208,10 @@ public class MakeMOFilesAction implements IObjectActionDelegate {
 			command.add("-r" + resource);
 			command.add("-l" + language);
 		} else {
-			command.add("-o" + outputfolder + "/" + language + "/" + domainname
+			command.add("-o" + outputfolder + "/" + language + "/LC_MESSAGES/" + domainname
 					+ ".mo");
 		}
-		command.add(inputfolder + "/" + language + "/" + domainname + ".po");
+		command.add(inputfolder + "/" + language + "/LC_MESSAGES/" + domainname + ".po");
 		return command;
 	}
 

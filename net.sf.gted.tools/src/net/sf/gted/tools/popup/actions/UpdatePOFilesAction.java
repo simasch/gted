@@ -30,12 +30,14 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.QualifiedName;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
@@ -78,27 +80,91 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(final IAction action) {
+		
+		final UpdatePOFilesAction instance = this;
+		
+		
+		Job job = new Job("Processing files") {
+			
+			@Override
+			protected IStatus run(IProgressMonitor monitor) {
 
-		List<String> command = new ArrayList<String>();
-		String error = null;
-		try {
-			// 1. xgettext
-			command = this.prepareXgettext();
-			error = ProcessHelper.executeCommand(this.project, true, command);
+				List<String> command = new ArrayList<String>();
+				List<String> files = new ArrayList<String>();
+				String error = null;
+		
+				try {
+	
+					// 1. xgettext
+					command = instance.prepareXgettext();
+	
+					final String extensions = instance.project
+							.getPersistentProperty(new QualifiedName(
+									ProjectPropertyPage.QUALIFIER,
+									ProjectPropertyPage.XGETTEXT_EXTENSION_PROPERTY));
+	
+					final List<String> extList = instance.extractStrings(extensions);
+					
+					instance.getFiles(instance.project.members(), extList, files);
+					
+					
+					// Set total number of work units
+					monitor.beginTask("Parsing the Files using xgettext...", files.size() );
+	
+	
+					
+					
+					List<String> composedcommand = new ArrayList<String>();
+					for (String file : files) {
+						try {
+							
+							composedcommand.clear();
+							composedcommand.addAll(command);
+							composedcommand.add(file);
+							
+							error = ProcessHelper.executeCommand(instance.project, true, composedcommand);
+							if(error != null) {
+								monitor.done();
+								System.err.println("Erro Found: " + error + "\n="+file);
+								break;
+							}
+							monitor.worked(1);
+						} catch (InterruptedException e1) {
+							e1.printStackTrace();
+							return Status.CANCEL_STATUS;
+						}
+					}
+					
+					if (error == null) {
+						// 2. msgmerge
+						error = instance.makeMsgmerge();
+						
+						instance.project.refreshLocal(IResource.DEPTH_INFINITE, null);
+					}
+					
 
-			if (error == null) {
-				// 2. msgmerge
-				error = this.makeMsgmerge();
+					if (error != null) {
+
+						System.err.println("Erro Found: " + error );
+						
+						//final Shell shell = new Shell();
+						//MessageDialog.openInformation(shell, "Update PO Files", error);
+						return Status.CANCEL_STATUS;
+					}
+					
+					return Status.OK_STATUS;
+					
+				} catch (final Exception e) {
+					e.printStackTrace();
+					error = e.getMessage();
+					return Status.CANCEL_STATUS;
+				}
+				
 			}
-			this.project.refreshLocal(IResource.DEPTH_INFINITE, null);
-		} catch (final Exception e) {
-			e.printStackTrace();
-			error = e.getMessage();
-		}
-		if (error != null) {
-			final Shell shell = new Shell();
-			MessageDialog.openInformation(shell, "Update PO Files", error);
-		}
+		};
+
+		job.schedule();
+
 	}
 
 	/**
@@ -108,10 +174,6 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 	 */
 	private List<String> prepareXgettext() throws CoreException {
 
-		final String extensions = this.project
-				.getPersistentProperty(new QualifiedName(
-						ProjectPropertyPage.QUALIFIER,
-						ProjectPropertyPage.XGETTEXT_EXTENSION_PROPERTY));
 
 		final String keywords = this.project
 				.getPersistentProperty(new QualifiedName(
@@ -158,10 +220,8 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 
 		command.add("-o" + outputfolder + "/" + domainname + ".pot");
 
-		final List<String> extList = this.extractStrings(extensions);
-
-		this.getFiles(this.project.members(), extList, command);
-
+		command.add("-j");
+		
 		return command;
 	}
 
@@ -200,7 +260,8 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 		List<String> command = new ArrayList<String>();
 		command.add("msgmerge");
 		command.add("-U");
-		command.add(outputfolder + "/" + language + "/" + domainname + ".po");
+		//command.add(outputfolder + "/" + language + "/" + domainname + ".po");
+		command.add(outputfolder + "/" + language + "/LC_MESSAGES/" + domainname + ".po");
 		command.add(outputfolder + "/" + domainname + ".pot");
 
 		return command;
@@ -228,12 +289,18 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 		for (final IResource resource : folder.members()) {
 			if (resource instanceof IFolder) {
 				final IFolder trFolder = (IFolder) resource;
-				final IFile file = trFolder.getFile(domainname + ".po");
-				if (file.exists()) {
+				
+				final IFolder lcFolder = trFolder.getFolder("LC_MESSAGES");
+				final IFile file = lcFolder.exists() ? lcFolder.getFile(domainname + ".po") : null;
+					
+					
+				if (lcFolder.exists() && file.exists()) {
+					
 					final List<String> command = this.prepareMsgmerge(resource
 							.getName());
+					
 					final String error = ProcessHelper.executeCommand(
-							this.project, true, command);
+							this.project, true, command);	
 					if (error == null || error.startsWith(".")) {
 						// do nothing it's ok
 					} else {
@@ -260,6 +327,7 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 				}
 			} else if (resource instanceof IFolder) {
 				final IFolder folder = (IFolder) resource;
+				
 				try {
 					this.getFiles(folder.members(), extList, command);
 				} catch (final CoreException e) {
