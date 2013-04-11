@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-17 23:45-0300\n"
+"POT-Creation-Date: 2007-10-04 14:14+0200\n"
 "PO-Revision-Date: 2007-10-04 14:12+0200\n"
 "Last-Translator: Simon Martinelli simon@martinelli.ch\n"
 "Language-Team: DE\n"
@@ -29,15 +29,3 @@ msgstr "zwei"
 #: src/test/Translatable.java:10
 msgid "three"
 msgstr "drei"
-
-#: src/test/Translatable.java:11
-msgid "quatro"
-msgstr ""
-
-#: src/test/Translatable.java:12
-msgid "cinco"
-msgstr ""
-
-#: src/test/Translatable.java:13
-msgid "seis"
-msgstr ""
