@@ -217,6 +217,7 @@ public class POFormEditor extends FormEditor implements IResourceChangeListener 
 		this.masterDetailsPage.refresh();
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAdapter(Class required) {
 		if (IContentOutlinePage.class.equals(required)) {

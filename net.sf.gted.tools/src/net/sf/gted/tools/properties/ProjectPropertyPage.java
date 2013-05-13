@@ -135,9 +135,9 @@ public class ProjectPropertyPage extends PropertyPage {
 	 * Holds path to gettext runtime property file. This file is searched for a
 	 * <em>basename</em> key and fills with this value the {@link #messagesText}
 	 */
-	private Text i18nText;
+	// private Text i18nText;
 
-	private Button i18nBrowseButton;
+	// private Button i18nBrowseButton;
 
 	/** Holds path to gettext runtime properties class. */
 	private Text messagesText;
@@ -535,8 +535,8 @@ public class ProjectPropertyPage extends PropertyPage {
 	private IFolder openSelectFolderDialog() {
 		this.project = ((IResource) this.getElement()).getProject();
 
-		final FolderSelectionDialog dialog = new FolderSelectionDialog(this
-				.getShell(), new WorkbenchLabelProvider(),
+		final FolderSelectionDialog dialog = new FolderSelectionDialog(
+				this.getShell(), new WorkbenchLabelProvider(),
 				new WorkbenchContentProvider() {
 				});
 

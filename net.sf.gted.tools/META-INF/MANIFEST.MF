@@ -11,7 +11,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: net.sf.gted.tools.jar
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: net.sf.gted.tools,
  net.sf.gted.tools.popup.actions,
  net.sf.gted.tools.preferences,
