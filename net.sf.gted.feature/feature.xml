@@ -5,16 +5,16 @@
       version="1.6.0"
       provider-name="Simon Martinelli">
 
-   <description url="http://gted.sourceforge.net">
+   <description url="http://www.gted.org/">
       gted (GetText EDitor) is an editor for gettext po files. 
 gted is developed as Eclipse plugin and therefore very usfull for developers (and translators) using the Eclipse IDE for developing.
    </description>
 
-   <copyright url="http://gted.sourceforge.net/">
-      Copyright (C) 2007 by Simon Martinelli, Gampelen, Switzerland
+   <copyright url="http://www.gted.org/">
+      Copyright (C) 2013 by Simon Martinelli, Gampelen, Switzerland
    </copyright>
 
-   <license url="http://gted.sourceforge.net/">
+   <license url="http://www.gted.org/">
       This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
 published by the Free Software Foundation; either version 2 of
@@ -30,7 +30,7 @@ USA.
    </license>
 
    <url>
-      <update label="gted Update" url="http://gted.sourceforge.net/update/"/>
+      <update label="gted Update" url="http://www.gted.org/update/"/>
    </url>
 
    <requires>
@@ -47,18 +47,18 @@ USA.
          id="net.sf.gted.doc"
          download-size="0"
          install-size="0"
-         version="1.6.0"/>
+         version="0.0.0"/>
 
    <plugin
          id="net.sf.gted.editor"
          download-size="0"
          install-size="0"
-         version="1.6.0"/>
+         version="0.0.0"/>
 
    <plugin
          id="net.sf.gted.tools"
          download-size="0"
          install-size="0"
-         version="1.6.0"/>
+         version="0.0.0"/>
 
 </feature>
