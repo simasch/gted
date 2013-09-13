@@ -2,7 +2,7 @@
 <feature
       id="net.sf.gted.feature"
       label="gted PO File Editor Feature"
-      version="1.6.0"
+      version="1.7.0"
       provider-name="Simon Martinelli">
 
    <description url="http://www.gted.org/">

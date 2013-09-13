@@ -265,7 +265,7 @@ public class POFile implements IPOParserCallback {
 				final StringTokenizer stMsgId = new StringTokenizer(parserEntry
 						.getMsgId(), "\n");
 				while (stMsgId.hasMoreTokens()) {
-					String msgId = stMsgId.nextToken();
+					String msgId = stMsgId.nextToken().replace("\r", "");
 					if (firstline) {
 						if (parserEntry.getMsgId().startsWith("\n")) {
 							out.println("msgid \"\"\n\"" + msgId + "\"");
@@ -288,7 +288,7 @@ public class POFile implements IPOParserCallback {
 					final StringTokenizer stMsgStr = new StringTokenizer(
 							singular.getMsgStr(), "\n");
 					while (stMsgStr.hasMoreTokens()) {
-						String msgStr = stMsgStr.nextToken();
+						String msgStr = stMsgStr.nextToken().replace("\r", "");
 						if (firstline) {
 							out.println("msgstr \"" + msgStr + "\"");
 							firstline = false;

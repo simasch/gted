@@ -11,5 +11,8 @@ public class Translatable {
 		System.out.println(_("quatro"));
 		System.out.println(_("cinco"));
 		System.out.println(_("seis"));
+		System.out.println(_("acht"));
+		System.out.println(_("neuen"));
+		System.out.println(_("zehn"));
 	}
 }

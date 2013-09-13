@@ -7,20 +7,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-04 14:14+0200\n"
+"Report-Msgid-Bugs-To: simon@martinelli.ch\n"
+"POT-Creation-Date: 2013-09-13 08:57+0200\n"
 "PO-Revision-Date: 2007-10-04 14:12+0200\n"
 "Last-Translator: Simon Martinelli simon@martinelli.ch\n"
 "Language-Team: DE\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=0; null;\n"
 
 #: src/test/Translatable.java:8
 msgid "one"
-msgstr "eins"
+msgstr "einsdfasdfasd"
 
 #: src/test/Translatable.java:9
 msgid "two"
@@ -29,3 +29,28 @@ msgstr "zwei"
 #: src/test/Translatable.java:10
 msgid "three"
 msgstr "drei"
+
+#: src/test/Translatable.java:11
+msgid "quatro"
+msgstr ""
+
+#: src/test/Translatable.java:12
+msgid "cinco"
+msgstr ""
+
+#: src/test/Translatable.java:13
+msgid "seis"
+msgstr ""
+
+#: src/test/Translatable.java:14
+msgid "acht"
+msgstr ""
+
+#: src/test/Translatable.java:15
+msgid "neuen"
+msgstr ""
+
+#: src/test/Translatable.java:16
+msgid "zehn"
+msgstr ""
+

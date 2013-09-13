@@ -2,8 +2,8 @@
 
 	<target name="default" depends="update" />
 
-	<property name="oldversion" value="1.5.5" />
-	<property name="newversion" value="1.6.0" />
+	<property name="oldversion" value="1.6.0" />
+	<property name="newversion" value="1.7.0" />
 
 	<target name="update">
 

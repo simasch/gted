@@ -2,5 +2,5 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: gted Doc Plug-in
 Bundle-SymbolicName: net.sf.gted.doc;singleton:=true
-Bundle-Version: 1.6.0
+Bundle-Version: 1.7.0
 Bundle-Vendor: Simon Martinelli
