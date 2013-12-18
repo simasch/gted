@@ -1,6 +1,6 @@
 /*
  gted - gted.sourceforge.net
- Copyright (C) 2007 by Simon Martinelli, Gampelen, Switzerland
+ Copyright (C) 2013 by Simon Martinelli, Erlach, Switzerland
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -45,15 +45,11 @@ public abstract class EntryDetailsPage implements IDetailsPage {
 
 	protected IManagedForm managedForm;
 
-	protected boolean dirty = false;
+	protected boolean dirty;
 
 	protected boolean filled;
 
 	protected final String[] columnNames = { "File", "Line" };
-
-	public EntryDetailsPage() {
-		super();
-	}
 
 	/**
 	 * Initialize the details page

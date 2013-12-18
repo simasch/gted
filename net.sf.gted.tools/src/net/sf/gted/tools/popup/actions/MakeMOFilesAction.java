@@ -1,6 +1,6 @@
 /*
  gted - gted.sourceforge.net
- Copyright (C) 2007 by Simon Martinelli, Gampelen, Switzerland
+ Copyright (C) 2013 by Simon Martinelli, Erlach, Switzerland
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by

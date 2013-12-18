@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"Report-Msgid-Bugs-To: simon@martinelli.ch\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-13 08:57+0200\n"
 "PO-Revision-Date: 2007-10-04 14:12+0200\n"
 "Last-Translator: Simon Martinelli simon@martinelli.ch\n"
@@ -53,4 +53,3 @@ msgstr ""
 #: src/test/Translatable.java:16
 msgid "zehn"
 msgstr ""
-
