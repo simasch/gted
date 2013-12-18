@@ -131,15 +131,6 @@ public class ProjectPropertyPage extends PropertyPage {
 
 	private Text domainnameText;
 
-	/**
-	 * Holds path to gettext runtime property file. This file is searched for a
-	 * <em>basename</em> key and fills with this value the {@link #messagesText}
-	 */
-	// private Text i18nText;
-
-	// private Button i18nBrowseButton;
-
-	/** Holds path to gettext runtime properties class. */
 	private Text messagesText;
 
 	/**
