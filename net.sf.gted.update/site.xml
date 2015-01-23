@@ -3,11 +3,11 @@
    <description url="http://www.gted.org/update/">
       gted (GetText EDitor) Update Site
    </description>
-   <feature url="http://www.gted.org/update/features/net.sf.gted.feature_1.7.0.jar" id="net.sf.gted.feature" version="1.7.0">
+   <feature url="http://www.gted.org/update/features/net.sf.gted.feature_1.8.0.jar" id="net.sf.gted.feature" version="1.8.0">
       <category name="gted"/>
    </feature>
-   <archive path="plugins/net.sf.gted.editor_1.7.0.jar" url="http://www.gted.org/update/plugins/net.sf.gted.editor_1.7.0.jar"/>
-   <archive path="plugins/net.sf.gted.tools_1.7.0.jar" url="http://www.gted.org/update/plugins/net.sf.gted.tools_1.7.0.jar"/>
-   <archive path="plugins/net.sf.gted.doc_1.7.0.jar" url="http://www.gted.org/update/plugins/net.sf.gted.doc_1.7.0.jar"/>
+   <archive path="plugins/net.sf.gted.editor_1.8.0.jar" url="http://www.gted.org/update/plugins/net.sf.gted.editor_1.8.0.jar"/>
+   <archive path="plugins/net.sf.gted.tools_1.8.0.jar" url="http://www.gted.org/update/plugins/net.sf.gted.tools_1.8.0.jar"/>
+   <archive path="plugins/net.sf.gted.doc_1.8.0.jar" url="http://www.gted.org/update/plugins/net.sf.gted.doc_1.8.0.jar"/>
    <category-def name="gted" label="gted"/>
 </site>

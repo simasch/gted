@@ -1,191 +1,261 @@
-http://www.gted.org/<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gted - GetText EDitor</title>
 
-<head>
-<meta http-equiv="Content-Language" content="de-ch">
-<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
-<link rel="stylesheet" type="text/css" href="gted.css">
-<title>gted :: GetText EDitor</title>
-</head>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-<body>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
 
-<div align="center">
-  <table id="table2" border="0" cellpadding="0" cellspacing="0" width="600">
-  </table>
-  <table width="700">
-    <tr>
-      <td align="left" valign="middle">
-      <img src="gted.gif" border="0" width="222" height="81"></td>
-      <td align="center">
-      <a style="color: rgb(255, 128, 0); font-weight: bold;" href="http://marketplace.eclipse.org/content/gted-gettext-editor-and-tools-integration">
-      Please Rate this plugin </a><br>
-      <a style="color: rgb(255, 128, 0); font-weight: bold;" href="http://marketplace.eclipse.org/content/gted-gettext-editor-and-tools-integration">
-      @ Eclipse Plugin Central</a></td>
-      <td align="right" valign="middle"></td>
-    </tr>
-  </table>
-  <div align="center">
-    <table id="table3" bgcolor="#808080" border="0" cellpadding="20" cellspacing="0" width="700">
-      <tr>
-        <td align="left" bgcolor="#808080" valign="top" width="149">
-        <a class="navi" href="#News">News</a><p></p>
-        <p><a class="navi" href="#Features">Features</a> </p>
-        <p><a class="navi" href="#Screenshots">Screenshots</a></p>
-        <p><a class="navi" href="#Installation">Installation</a></p>
-        <p><a class="navi" href="#Examples">Examples</a></p>
-        <p><a class="navi" href="#Bugs,_Feature_Requests_and_Support">Support</a></p>
-        <p><a class="navi" href="#Team">Team</a></p>
-        <p><a class="navi" href="#License">License</a></p>
-        </td>
-        <td bgcolor="#efefef" width="550">
-        <h1><a name="Notice">Notice</a></h1>
-        If you find a bug in gted PLEASE let me know!<br>
-        Bug reports can be posted
-        <a href="https://github.com/simasch/gted/issues">here</a> 
-        or you can write an email to: <a href="mailto:simon@gted.org">simon@gted.org</a><p>
-        Every bug report will help to make gted more usable for everybody!<br>
-        Thanks a lot!</p>
-        <hr color="#808080" noshade="noshade" size="1">
-        <h1><a name="News">News</a></h1>
-        <ul>
-          <li>13.09.2013: <strong>gted 1.7.0 released</strong></li>
-			<li>13.05.2013: <b><a href="http://www.gted.org/update/site.xml">New update site</a></b></li>
-		  <li>06.02.2012: <b>gted now on <a href="http://www.github.com/">github</a></b></li>
-		  <li>24.02.2009: <b>gted 1.5.2 Bugfix release</b></li>
-		  <li>23.02.2009: <b>gted 1.5.1 Bugfix release</b></li>
-		  <li>13.01.2009: <b>gted 1.5.0 released.</b><br>Two new features: --default-domain is configurable and for the Java people -r option is now available.<br>Thanks a lot to Martin for providing the -r patch!</li>
-		  <li>12.08.2008: <b>gted 1.4.1 released with Java 5 support. Sorry!</b><br></li>
-          <li>12.08.2008: <b>gted 1.4.0 released</b><br></li>
-          <li>19.07.2008: <a href="gted_tutorial.htm">new gted Tutorial</a> from 
-          Pavel Mendl. <br>
-          Thanks a lot Pavel!<br></li>
-          <li>07.04.2008: <b>gted 1.3.0</b> with two bugfixes released!</li>
-          <li>11.02.2008: <b>Today Zoran Regvart joined the project! </b><br>
-          Now we are two people working on gted and we hope to release new and 
-          better versions faster and more often!<br></li>
-          <li>26.09.2007: Website now on <b>own domain</b>
-          <a href="http://www.gted.org">www.gted.org</a>!</li>
-          <li>27.01.2007: <a href="gettext_java_tutorial.htm"><b>Tutorial</b>: Using 
-          gettext in Java 5 (or later)</a></li>
-          <li>11.01.2007: gted has now an <b>Update Site!</b>
-          <a href="http://gted.sourceforge.net/update">http://gted.sourceforge.net/update</a></li>
-        </ul>
-        <hr color="#808080" noshade="noshade" size="1">
-        <h1><a name="Features">Features</a></h1>
-        <ul>
-          <li>gted (GetText EDitor) is an editor for gettext po files.</li>
-          <li>Integration of gettext Tools (xgettext, msgmerge, msgfmt)</li>
-          <li>It is developed as <b>Eclipse plugin</b> and therefore very useful 
-          for developers (and translators) using the Eclipse IDE.</li>
-          <li>gted has been tested on:</li><ul>
-            <li>Windows XP SP2, Eclipse 3.3, Java 1.5.0_11</li>
-            <li>openSUSE Linux 10.2, Eclipse 3.3, Java 1.5.0_12</li>
-            <li>Mac OS X 10.4.10, Eclipse 3.3, Java 1.5.0_06</li>
-          </ul>
-          </li>
-        </ul>
-        <hr color="#808080" noshade="noshade" size="1">
-        <h1><a name="Screenshots">Screenshots</a></h1>
-        <table id="table4" border="0" cellpadding="5" cellspacing="0" width="100%">
-          <tr>
-            <td align="center">
-            <a target="_blank" href="screenshots/entries_horizontal.gif">
-            <img border="0" src="screenshots/entries_horizontal_small.gif" width="200" height="140"></a></td>
-            <td align="center">
-            <a target="_blank" href="screenshots/entries_vertical.gif">
-            <img border="0" src="screenshots/entries_vertical_small.gif" width="200" height="140"></a></td>
-          </tr>
-          <tr>
-            <td align="center">Entries panel (horizontal) <br>
-            <a target="_blank" href="screenshots/entries_horizontal.gif">larger 
-            image</a></td>
-            <td align="center">Entries panel (vertical)<br>
-            <a target="_blank" href="screenshots/entries_vertical.gif">larger image</a></td>
-          </tr>
-          <tr>
-            <td align="center"><a target="_blank" href="screenshots/source.gif">
-            <img src="screenshots/source_small.gif" border="0" width="200" height="150"></a></td>
-            <td align="center">
-            <a target="_blank" href="screenshots/project_properties.gif">
-            <img src="screenshots/project_properties_small.gif" border="0" width="200" height="151"></a></td>
-          </tr>
-          <tr>
-            <td align="center">Source panel <br>
-            <a target="_blank" href="screenshots/source.gif">larger image</a></td>
-            <td align="center">Project properties<br>
-            <a target="_blank" href="screenshots/header.gif">larger image</a></td>
-          </tr>
-          <tr>
-            <td align="center"><a target="_blank" href="screenshots/header.gif">
-            <img border="0" src="screenshots/header_small.gif" width="200" height="140"></a></td>
-            <td align="center">
-            <a target="_blank" href="screenshots/preferences.gif">
-            <img border="0" src="screenshots/preferences_small.gif" width="200" height="139"></a></td>
-          </tr>
-          <tr>
-            <td align="center">Header editor<br>
-            <a target="_blank" href="screenshots/header.gif">larger image</a></td>
-            <td align="center">Preferences<br>
-            <a target="_blank" href="screenshots/preferences.gif">larger image</a></td>
-          </tr>
-        </table>
-        <hr color="#808080" noshade="noshade" size="1">
-        <h1><a name="Installation">Installation</a></h1>
-        <ul>
-          <li>You can either use the <b>Update Site</b>:
-          <a href="http://gted.sourceforge.net/update">http://gted.sourceforge.net/update</a></li>
-          <li>or you can <a href="http://www.sourceforge.net/projects/gted"><b>download</b></a> 
-          gted and copy it in your eclipse plugins directory (make sure to delete 
-          previous installed versions of gted)</li>
-        </ul>
-        <hr color="#808080" noshade="noshade" size="1">
-        <h1><a name="Examples">Examples</a></h1>
-        <ul>
-          <li>You can find an example of a Java project in the <b>
-          <a target="_blank" href="http://sourceforge.net/cvs/?group_id=185425">
-          CVS repository</a></b></li>
-          <li>Check out the Eclipse project <b>net.sf.gted.example.java</b></li>
-          <li>It includes a launch configuration</li>
-          <li>The example is based on the <b>
-          <a href="gettext_java_tutorial.htm">tutorial</a></b></li>
-        </ul>
-        <hr color="#808080" noshade="noshade" size="1">
-        <h1><a name="Bugs,_Feature_Requests_and_Support">Bugs, Feature Requests 
-        and Support</a></h1>
-        <ul>
-          <li>Please use the <a href="http://www.sourceforge.net/projects/gted/">
-          gted SourceForge project page</a></li>
-        </ul>
-        <hr color="#808080" noshade="noshade" size="1">
-        <h1><a name="Team">Team</a></h1>
-        <ul>
-          <li>Simon Martinelli, Switzerland</li>
-          <li>Zoran Regvart, Croatia</li>
-        </ul>
-        <hr color="#808080" noshade="noshade" size="1">
-        <h1><a name="License">License</a></h1>
-        <ul>
-          <li>gted is released under
-          <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a><br>
-          � 2008 - <a href="http://simonmartinelli.blogspot.com/">Simon Martinelli, 
-          Gampelen, Switzerland</a></li>
-        </ul>
-        <p>&nbsp;</p>
-        </td>
-      </tr>
-    </table>
-  </div>
-</div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-5256650-1");
-pageTracker._trackPageview();
-</script>
-</body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<img src="logo/gted.gif">
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li role="presentation"><a href="#Features">Features</a></li>
+					<li role="presentation"><a href="#Screenshots">Screenshots</a></li>
+					<li role="presentation"><a href="#Installation">Installation</a></li>
+					<li role="presentation"><a href="#Examples">Examples</a></li>
+					<li role="presentation"><a href="#Support">Support</a></li>
+					<li role="presentation"><a href="#About">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
+	<div style="margin-top: 88px; padding-top: 20px; padding-bottom: 40px; background-color: #FF8000;">
+		<div class="container">
+			<a name="Features"></a>
+			<h1>Features</h1>
+			
+			<p><b>gted (GetText EDitor)</b> is an editor for gettext po files. It integrates the gettext tools xgettext, msgmerge and msgfmt.<br>
+			Developed as an Eclipse and it is very useful for developers (and translators) using the Eclipse IDE.</p>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-12">
+				<a name="News"></a>
+				<h1>News</h1>
+				<table class="table table-striped">
+					<tr>
+						<td>26.01.2015</td><td>gted 1.8.0 released</td>
+					</tr>
+					<tr>
+						<td>13.09.2013</td><td>gted 1.7.0 released
+					</tr>
+					<tr>
+						<td>13.05.2013</td><td>New update site
+					</tr>
+					<tr>
+						<td>06.02.2012</td><td>gted now on github
+					</tr>
+					<tr>
+						<td>24.02.2009</td><td>gted 1.5.2 Bugfix release
+					</tr>
+					<tr>
+						<td>23.02.2009</td><td>gted 1.5.1 Bugfix release
+					</tr>
+					<tr>
+						<td>13.01.2009</td><td>gted 1.5.0 released.<br>Two new features: --default-domain is configurable and for the Java people -r option is now available.<br>Thanks a lot to Martin for providing the patch!</td>
+					</tr>
+					<tr>
+						<td>12.08.2008</td><td>gted 1.4.1 released with Java 5 support. Sorry!</td>
+					</tr>
+					<tr>
+						<td>12.08.2008</td><td>gted 1.4.0 released</td>
+					</tr>
+					<tr>
+						<td>19.07.2008</td><td>new gted Tutorial from Pavel Men	dl.<br>Thanks a lot Pavel!</td>
+					</tr>
+					<tr>
+						<td>07.04.2008</td><td>gted 1.3.0 with two bugfixes released!</td>
+					</tr>
+					<tr>
+						<td>11.02.2008</td><td>Today Zoran Regvart joined the project!<br>Now we are two people working on gted and we hope to release new and better versions faster and more often!</td>
+					</tr>
+					<tr>
+						<td>26.09.2007</td><td>Website now on own domain www.gted.org!</td>
+					</tr>
+					<tr>
+						<td>27.01.2007</td><td>Tutorial: Using gettext in Java 5 (or later)</td>
+					</tr>
+					<tr>
+						<td>11.01.2007</td><td> gted has now an Update Site! http://gted.sourceforge.net/update</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<a name="Screenshots"></a>
+				<h1>Screenshots</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+					<a target="_blank" href="screenshots/entries_horizontal.gif">
+					<img border="0" src="screenshots/entries_horizontal_small.gif" width="200" height="140"></a>
+					<br>Entries panel (horizontal) <a target="_blank" href="screenshots/entries_horizontal.gif">larger image</a>
+			</div>
+			<div class="col-sm-4">
+					<a target="_blank" href="screenshots/entries_vertical.gif">
+					<img border="0" src="screenshots/entries_vertical_small.gif" width="200" height="140"></a>
+					<br>Entries panel (vertical) <a target="_blank" href="screenshots/entries_vertical.gif">larger image</a>
+			</div>
+			<div class="col-sm-4">
+					<a target="_blank" href="screenshots/source.gif">
+					<img src="screenshots/source_small.gif" border="0" width="200" height="150"></a>
+					<br>Source panel <a target="_blank" href="screenshots/source.gif">larger image</a>
+			</div>
+			<div class="col-sm-4">
+					<a target="_blank" href="screenshots/project_properties.gif">
+					<img src="screenshots/project_properties_small.gif" border="0" width="200" height="151"></a>
+					<br>Project properties <a target="_blank" href="screenshots/header.gif">larger image</a>
+			</div>
+			<div class="col-sm-4">
+					<a target="_blank" href="screenshots/header.gif">
+					<img border="0" src="screenshots/header_small.gif" width="200" height="140"></a>
+					<br>Header editor <a target="_blank" href="screenshots/header.gif">larger image</a>
+			</div>
+			<div class="col-sm-4">
+					<a target="_blank" href="screenshots/preferences.gif">
+					<img border="0" src="screenshots/preferences_small.gif" width="200" height="139"></a>
+					<br>Preferences <a target="_blank" href="screenshots/preferences.gif">larger image</a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<a name="Installation"></a>
+				<h1>Installation</h1>
+
+			        <p><b>Update Site</b>: <a href="http://gted.sourceforge.net/update">http://gted.sourceforge.net/update</a></p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<a name="Examples"></a>
+				<h1>Examples</h1>
+
+				<p>You can find an example of a Java project in the <b><a target="_blank" href="https://github.com/simasch/gted">GitHub repository</a></b></p>
+				<p>Check out the Eclipse project <b>net.sf.gted.example.java</b> It includes a launch configuration</p>
+
+				<h2>Tutorial: Using gettext in Java 5 (or later)</h2>
+				
+				<p>Since I'm a very big fan of gettext I also use gettext to create the resource bundles of my Java programs. Here is a short tutorial.<br>	It's based on the <a href="http://www.gnu.org/software/gettext/manual/gettext.html">gettext documentation</a>.</p>
+				<p><i>Important notice: This tutorial doesn't make use of gted! It demostrates simply the functionality of GNU gettext with Java.</i></p>
+
+				<h3>1. Create a class called Util</h3>
+				
+<pre><font COLOR="#7f0055"><b>public</b></font> <font COLOR="#7f0055"><b>class</b></font><font> Util {</font>
+    <font COLOR="#7f0055"><b>private</b></font><font> </font><font COLOR="#7f0055"><b>static</b></font><font> ResourceBundle </font><font COLOR="#0000c0"><i>catalog</i></font><font> = ResourceBundle.<i>getBundle</i>(</font><font COLOR="#2a00ff">&quot;Messages&quot;</font><font>);</font>
+
+    <font COLOR="#7f0055"><b>public</b></font><font> </font><font COLOR="#7f0055"><b>static</b></font><font> String _(String s) {</font>
+	    <font COLOR="#7f0055"><b>return</b></font><font> </font><font COLOR="#0000c0"><i>catalog</i></font><font>.getString(s);</font>
+    }
+}</pre>
+
+			  <h3>2. Use Util as static import in your classes to mark the strings Translatable</h3>
+
+<pre><font COLOR="#7f0055"><b>import</b></font><font> </font><font COLOR="#7f0055"><b>static</b></font><font> Util.<i>_</i>;</font>
+
+<font COLOR="#7f0055"><b>public</b></font><font> </font><font COLOR="#7f0055"><b>class</b></font><font> Translatable {</font>
+
+<font COLOR="#7f0055"><b>public</b></font><font> </font><font COLOR="#7f0055"><b>static</b></font><font> </font><font COLOR="#7f0055"><b>void</b></font><font> main(String[] args) {
+			System.</font><font COLOR="#0000c0"><i>out</i></font><font>.println(<i>_</i>(</font><font COLOR="#2a00ff">&quot;Text one&quot;</font><font>));
+			System.</font><font COLOR="#0000c0"><i>out</i></font><font>.println(<i>_</i>(</font><font COLOR="#2a00ff">&quot;Text two&quot;</font><font>));
+    }
+}</pre>
+
+			  <h3>3. Generate .pot file from your Java sources</h3>
+
+			  <pre>&gt; xgettext -k_ -o po/messages.pot src/Translatable.java</pre>
+			  <p>-k_ indicates that the it must scan for calls to _()</p>
+
+			  <h3>4. Copy the .pot file to a .po file for the desired languages</h3>
+
+			  <p>Place the file under po/&lt;languagecode&gt;/messages.po</p>
+			  
+			  <h3>5. Generate ResourceBundles</h3>
+			  
+			  <pre>&gt; msgfmt --java2 -d resources -r Messages -l de po/de/messages.po</pre>
+			  <p>Hint: under Windows you have to set the TMPDIR: i.e. set TMPDIR=c:\temp</p>
+			  
+			  <h3>6. Run the program</h3>
+			  
+			  <p><i>Make sure that the folder <b>resources</b> is in the classpath!</i></p>
+			  <p>The programs output should now be translated.</p>
+			  
+			  <h3>Appendix. Update .po files</h3>
+			  
+				<p>To update your .po files run again:</p>
+			  <pre>&gt; xgettext -k_ -o po/messages.pot src/Translatable.java</pre>
+			  <p>Then merge the new .pot file to the existing .po files</p>
+			  <pre>&gt; msgmerge -U po/de/messages.po po/messages.pot</pre></div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<a name="Support"></a>
+				<h1>Support</h1>
+
+				<p>Please use the <a href="https://github.com/simasch/gted/issues">GitHub project page</a></p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<a name="About"></a>
+				<h1>About</h1>
+
+				<p>gted is released under <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a></p>
+				<p>&copy; 2015 - <a href="http://blog.martinelli.ch">Simon Martinelli, Switzerland</a></p>
+				<br><br>
+			</div>
+		</div>
+
+	</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+
+	<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-5256650-1");
+		pageTracker._trackPageview();
+	</script>
+
+  </body>
 </html>

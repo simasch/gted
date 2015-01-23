@@ -61,13 +61,18 @@ public class POPartitionScanner extends RuleBasedPartitionScanner {
 				POPartitionScanner.PO_MSGID_PLURAL);
 		final IToken poMsgstr = new Token(POPartitionScanner.PO_MSGSTR);
 
-		final IPredicateRule[] rules = new IPredicateRule[5];
+		final IPredicateRule[] rules = new IPredicateRule[10];
 
 		rules[0] = new NonMatchingRule();
-		rules[1] = new EndOfLineRule("#", poComment);
-		rules[2] = new SingleLineRule("msgid", " ", poMsgid);
-		rules[3] = new SingleLineRule("msgid_plural", " ", poMsgidplural);
-		rules[4] = new SingleLineRule("msgstr", " ", poMsgstr);
+		rules[1] = new EndOfLineRule("# ", poComment);
+		rules[2] = new EndOfLineRule("#.", poComment);
+		rules[3] = new EndOfLineRule("#,", poComment);
+		rules[4] = new EndOfLineRule("#:", poComment);
+		rules[5] = new EndOfLineRule("#|", poComment);
+		rules[6] = new EndOfLineRule("#\n", poComment);
+		rules[7] = new SingleLineRule("msgid", " ", poMsgid);
+		rules[8] = new SingleLineRule("msgid_plural", " ", poMsgidplural);
+		rules[9] = new SingleLineRule("msgstr", " ", poMsgstr);
 
 		this.setPredicateRules(rules);
 	}

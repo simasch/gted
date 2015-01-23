@@ -50,7 +50,7 @@ public class ProcessHelper {
 		if (path != null && !path.equals("")) {
 			command.set(0, path + File.separator + command.get(0));
 		}
-		System.out.println("Command: " + command);
+		System.out.println("Command: " + command.toString().replaceAll(",", ""));
 
 		final File workdir = new File(project.getLocation().toOSString());
 

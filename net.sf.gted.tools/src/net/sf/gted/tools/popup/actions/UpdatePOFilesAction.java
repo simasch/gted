@@ -18,6 +18,7 @@
  */
 package net.sf.gted.tools.popup.actions;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -123,8 +124,7 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 									instance.project, true, composedcommand);
 							if (error != null) {
 								monitor.done();
-								System.err.println("Erro Found: " + error
-										+ "\n=" + file);
+								System.err.println(error + "\n=" + file);
 								break;
 							}
 							monitor.worked(1);
@@ -144,7 +144,7 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 
 					if (error != null) {
 
-						System.err.println("Error Found: " + error);
+						System.err.println(error);
 
 						// final Shell shell = new Shell();
 						// MessageDialog.openInformation(shell,
@@ -199,8 +199,17 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 						ProjectPropertyPage.QUALIFIER,
 						ProjectPropertyPage.LANGUAGE_PROPERTY));
 
+		final String customOptions = this.project
+				.getPersistentProperty(new QualifiedName(
+						ProjectPropertyPage.QUALIFIER,
+						ProjectPropertyPage.XGETTEXT_CUSTOM_OPTIONS_PROPERTY));
+
 		List<String> command = new ArrayList<String>();
 		command.add("xgettext");
+
+		if (customOptions != null && !customOptions.equals("")) {
+			command.add(customOptions);
+		}
 
 		if (language != null && !language.equals("")) {
 			command.add("-L" + language);
@@ -219,7 +228,10 @@ public class UpdatePOFilesAction implements IObjectActionDelegate {
 
 		command.add("-o" + outputfolder + "/" + domainname + ".pot");
 
-		command.add("-j");
+		File file = new File(outputfolder + "/" + domainname + ".pot");
+		if (file.exists()) {
+			command.add("-j");
+		}
 
 		return command;
 	}

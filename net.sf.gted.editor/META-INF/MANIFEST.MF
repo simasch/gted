@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: gted PO File Editor
 Bundle-SymbolicName: net.sf.gted.editor;singleton:=true
-Bundle-Version: 1.7.0
+Bundle-Version: 1.8.0
 Bundle-Activator: net.sf.gted.editor.POFileEditorPlugin
 Bundle-Vendor: Simon Martinelli
 Require-Bundle: org.eclipse.core.runtime,

@@ -92,6 +92,10 @@ public class ProjectPropertyPage extends PropertyPage {
 
 	private static final String XGETTEXT_DOMAIN_NAME_DEFAULT = "messages";
 
+	public static final String XGETTEXT_CUSTOM_OPTIONS_PROPERTY = "CUSTOM";
+
+	public static final String XGETTEXT_CUSTOM_OPTIONS_TITLE = "Additional properties (like -a)";
+
 	private static final String MSGFMT_OUTPUT_TITLE = "&Output Folder:";
 
 	public static final String MSGFMT_OUTPUT_PROPERTY = "MOUTPUT";
@@ -132,6 +136,8 @@ public class ProjectPropertyPage extends PropertyPage {
 	private Text domainnameText;
 
 	private Text messagesText;
+
+	private Text customText;
 
 	/**
 	 * Constructor for SamplePropertyPage.
@@ -349,6 +355,31 @@ public class ProjectPropertyPage extends PropertyPage {
 				}
 			}
 		});
+
+		// Label for custom options field
+		final Label customLabel = new Label(composite, SWT.NONE);
+		customLabel.setText(ProjectPropertyPage.XGETTEXT_CUSTOM_OPTIONS_TITLE);
+
+		// Extension text field
+		this.customText = new Text(composite, SWT.SINGLE | SWT.BORDER);
+		gd = new GridData();
+		gd.widthHint = this
+				.convertWidthInCharsToPixels(ProjectPropertyPage.TEXT_FIELD_WIDTH);
+		gd.horizontalSpan = 2;
+		this.customText.setLayoutData(gd);
+
+		// Populate custom text field
+		try {
+			String custom = ((IResource) this.getElement())
+					.getPersistentProperty(new QualifiedName(
+							ProjectPropertyPage.QUALIFIER,
+							ProjectPropertyPage.XGETTEXT_CUSTOM_OPTIONS_PROPERTY));
+			if (custom != null) {
+				this.customText.setText(custom);
+			}
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -496,6 +527,13 @@ public class ProjectPropertyPage extends PropertyPage {
 					new QualifiedName(ProjectPropertyPage.QUALIFIER,
 							ProjectPropertyPage.XGETTEXT_OUTPUT_PROPERTY),
 					this.xoutputText.getText());
+
+			((IResource) this.getElement())
+					.setPersistentProperty(
+							new QualifiedName(
+									ProjectPropertyPage.QUALIFIER,
+									ProjectPropertyPage.XGETTEXT_CUSTOM_OPTIONS_PROPERTY),
+							this.customText.getText());
 
 			((IResource) this.getElement()).setPersistentProperty(
 					new QualifiedName(ProjectPropertyPage.QUALIFIER,

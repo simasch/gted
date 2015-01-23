@@ -57,14 +57,19 @@ public class POKeyWordScanner extends RuleBasedScanner {
 		final IToken string = new Token(new TextAttribute(manager
 				.getColor(IPOColorConstants.PO_STRING)));
 
-		final IRule[] rules = new IRule[6];
+		final IRule[] rules = new IRule[11];
 
-		rules[0] = new EndOfLineRule("#", poComment);
-		rules[1] = new SingleLineRule("msgid", " ", poMsgid);
-		rules[2] = new SingleLineRule("msgid_plural", " ", poMsgidplural);
-		rules[3] = new SingleLineRule("msgstr", " ", poMsgstr);
-		rules[4] = new SingleLineRule("\"", "\"", string, '\\');
-		rules[5] = new WhitespaceRule(new POWhitespaceDetector());
+		rules[0] = new EndOfLineRule("# ", poComment);
+		rules[1] = new EndOfLineRule("#.", poComment);
+		rules[2] = new EndOfLineRule("#,", poComment);
+		rules[3] = new EndOfLineRule("#:", poComment);
+		rules[4] = new EndOfLineRule("#|", poComment);
+		rules[5] = new EndOfLineRule("#\n", poComment);
+		rules[6] = new SingleLineRule("msgid", " ", poMsgid);
+		rules[7] = new SingleLineRule("msgid_plural", " ", poMsgidplural);
+		rules[8] = new SingleLineRule("msgstr", " ", poMsgstr);
+		rules[9] = new SingleLineRule("\"", "\"", string, '\\');
+		rules[10] = new WhitespaceRule(new POWhitespaceDetector());
 
 		this.setRules(rules);
 	}
